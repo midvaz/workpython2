@@ -11,7 +11,7 @@ def random_id():
     Random += random.randint(0, 1000000000000)
     return Random
 
-
+#Хуй
 def glossing(vk_session, fuck): # Эту функцию вызываем из файла "message"
     longpoll = VkLongPoll(vk_session)
     vk = vk_session.get_api()
