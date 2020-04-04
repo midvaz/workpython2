@@ -77,17 +77,17 @@ def Mess(fuck, vk_session):
 
                     vk.messages.send(
                         user_id=event.user_id,
-                        message=linet, # Вывод сообщения о входе в режим голосования.
-                        keyboard=open("glossing_keyboard.json", "r", encoding="UTF-8").read(), # Вызываем главиатуру голосования.
+                        message=linet,
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
+                    #otvet = glossing.glossing(vk_session)
                     vk.messages.send(
                         user_id=event.user_id,
-                        message=glossing.glossing(vk_session, fuck), # Вызываем метод "голосование"
-                        keyboard=open("glossing_keyboard.json", "r", encoding="UTF-8").read(),
+                        message=glossing.glossing(vk_session),
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
-
                 else:
 
                     if i < 4:
