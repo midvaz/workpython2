@@ -1,0 +1,41 @@
+{
+  "one_time": false,
+  "buttons": [
+  [
+    {
+      "action": {
+        "type": "text",
+        "label": "неделя"
+      },
+      "color": "positive"
+    }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "другие команды"
+      },
+      "color": "positive"
+    }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "расписание"
+      },
+      "color": "positive"
+    }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "события"
+      },
+      "color": "positive"
+    }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "голосование"
+      },
+      "color": "positive"
+    }]
+  ]
+}
