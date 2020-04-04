@@ -5,35 +5,14 @@
     {
       "action": {
         "type": "text",
-        "label": "1"
+        "label": "узнать рейтинг"
       },
       "color": "positive"
     }],
     [{
       "action": {
         "type": "text",
-        "label": ""
-      },
-      "color": "positive"
-    }],
-    [{
-      "action": {
-        "type": "text",
-        "label": "кузьминых"
-      },
-      "color": "positive"
-    }],
-    [{
-      "action": {
-        "type": "text",
-        "label": "коренев"
-      },
-      "color": "positive"
-    }],
-    [{
-      "action": {
-        "type": "text",
-        "label": "чувак"
+        "label": "назад"
       },
       "color": "positive"
     }]
