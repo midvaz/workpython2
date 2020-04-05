@@ -45,11 +45,11 @@ def glossing(vk_session, fuck):
 
 
 
-                    else:
-                        # Получаем от пользователя номер студента и его оценку
-                        number = event.text.lower()  # Номер студента
-                        for events in longpoll.listen():
-                            if events.type == VkEventType.MESSAGE_NEW and event.to_me:
-                                gloss = events.text.lower()  # Оценка для студента
-                                return students.student_info(number, gloss)  # Возвращаем значение из функции
-                                # student_info из файла students
+                else:
+                    # Получаем от пользователя номер студента и его оценку
+                    number = event.text.lower()  # Номер студента
+                    for events in longpoll.listen():
+                        if events.type == VkEventType.MESSAGE_NEW and event.to_me:
+                            gloss = events.text.lower()  # Оценка для студента
+                            return students.student_info(number, gloss, event.user_id)  # Возвращаем значение из функции
+                        # student_info из файла students

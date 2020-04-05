@@ -8,15 +8,39 @@ students['4'] = ['Игорь', 0]
 students['5'] = ['Чувак', 0]
 
 
+def student_id(number, user_id):
+    i = 0
+    lines = ""
+    while i < len(students):
+        if number in students:
+
+            file_name = students[number]
+            event = open(file_name[0] + ".txt", encoding='utf8',)
+
+            for line in event:
+                lines += line
+
+            if str(user_id) in lines:
+                return False
+            else:
+                events = open(file_name[0] + ".txt", 'w')
+                events.write(str(user_id) + '\n')
+                event.close()
+                return True
+
+
 # отвечает на ввод числа (норм это число или не проходит по критериям)
-def student_info(number, gloss):
+def student_info(number, gloss, user_id):
     i = 1
     while i < 25:
         if (number in students) and ((float(gloss) >= 1) and (float(gloss) <= 5)):  # Проверка на вход в диапазон оценок
-            rating = students[number]
-            rating[1] += float(gloss)
-            return students[number]
-            i += 1
+            if student_id(number, user_id):
+                rating = students[number]
+                rating[1] += float(gloss)
+                return students[number]
+                i += 1
+            else:
+                return "Ты борзый самый?"
         else:
             return "Неправильное число"
 
