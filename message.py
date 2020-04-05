@@ -22,13 +22,13 @@ def Mess(fuck, vk_session):
     longpoll = VkLongPoll(vk_session)
     vk = vk_session.get_api()
 
-    event = open("C:\\Users\\mi28d\\Desktop\\vkbot\\events.txt", encoding='utf8')
+    event = open("events.txt", encoding='utf8')
     lines = ""
 
     for line in event:
         lines += line
 
-    students_numbers = open("C:\\Users\\mi28d\\Desktop\\vkbot\\students_numbers", encoding='utf8')
+    students_numbers = open("students_numbers", encoding='utf8')
     linet = ''
 
     for line in students_numbers:
@@ -56,7 +56,7 @@ def Mess(fuck, vk_session):
                     vk.messages.send(
                         user_id=event.user_id,
                         message=fuck,
-                        keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
                     k = 2
@@ -64,7 +64,7 @@ def Mess(fuck, vk_session):
                     vk.messages.send(
                         user_id=event.user_id,
                         message=week.Week(fuck),
-                        keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
                     k = 2
@@ -72,7 +72,7 @@ def Mess(fuck, vk_session):
                     vk.messages.send(
                         user_id=event.user_id,
                         message='Ты взломать мою жепку',
-                        keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
                     k = 2
@@ -81,7 +81,7 @@ def Mess(fuck, vk_session):
                     vk.messages.send(
                         user_id=event.user_id,
                         message=lines,
-                        keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
                     k = 2
@@ -91,13 +91,13 @@ def Mess(fuck, vk_session):
                     vk.messages.send(
                         user_id=event.user_id,
                         message=linet, # Вывод сообщения о входе в режим голосования.
-                        keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\glossing_keyboard.json", "r", encoding="UTF-8").read(), # Вызываем главиатуру голосования.
+                        keyboard=open("glossing_keyboard.json", "r", encoding="UTF-8").read(), # Вызываем главиатуру голосования.
                         random_id=random_id()
                     )
                     vk.messages.send(
                         user_id=event.user_id,
                         message=glossing.glossing(vk_session, fuck), # Вызываем метод "голосование"
-                        keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                        keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                         random_id=random_id()
                     )
                     k = 3
@@ -109,7 +109,7 @@ def Mess(fuck, vk_session):
                             vk.messages.send(
                                 user_id=event.user_id,
                                 message=random.choice(her_otvet1),
-                                keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                                keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                                 random_id=random_id()
                             )
                             i += 1
@@ -117,6 +117,6 @@ def Mess(fuck, vk_session):
                             vk.messages.send(
                                 user_id=event.user_id,
                                 message=random.choice(her_otvet2),
-                                keyboard=open("C:\\Users\\mi28d\\Desktop\\vkbot\\keyboard.json", "r", encoding="UTF-8").read(),
+                                keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                                 random_id=random_id()
                             )
