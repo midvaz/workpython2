@@ -1,30 +1,54 @@
 # Создаем список студентов и их рейтинга
 students = dict()
 
-students['1'] = ['Олег', 0]
-students['2'] = ['Александр', 0]
-students['3'] = ['Максим', 0]
-students['4'] = ['Игорь', 0]
-students['5'] = ['Чувак', 0]
+students['1'] = ['Агаркова', 0, " ", 0]
+students['2'] = ['Ажинов', 0, " ", 0]
+students['3'] = ['Акимов', 0, " ", 0]
+students['4'] = ['Алиев', 0, " ",  0]
+students['5'] = ['Антонян', 0, " ", 0]
+students['6'] = ['Барабанов', 0, " ", 0]
+students['7'] = ['Грибенников', 0, " ", 0]
+students['8'] = ['Дворниченко', 0, " ", 0]
+students['9'] = ['Джамалдинов', 0, " ", 0]
+students['10'] = ['Добряков', 0, " ", 0]
+students['11'] = ['Замореев', 0, " ", 0]
+students['12'] = ['Коваленко', 0, " ", 0]
+students['13'] = ['Коренев', 0, " ", 0]
+students['14'] = ['Кривчиков', 0, " ", 0]
+students['15'] = ['Кузьминых', 0, " ", 0]
+students['16'] = ['Леонов', 0, " ", 0]
+students['17'] = ['Линник', 0, " ", 0]
+students['18'] = ['Маховиков', 0, " ", 0]
+students['19'] = ['Нестеренко', 0, " ", 0]
+students['20'] = ['Пасынков', 0, " ", 0]
+students['21'] = ['Руппель', 0, " ", 0]
+students['22'] = ['Сафронов', 0, " ", 0]
+students['23'] = ['Чувак', 0, " ", 0]
 
 
 def student_id(number, user_id):
     i = 0
     lines = ""
     while i < len(students):
+        admin_id = '293470132'
         if number in students:
 
             file_name = students[number]
-            event = open(file_name[0] + ".txt", encoding='utf8',)
+            event = open("C:\\Program\\vkbot\\student_id\\" + file_name[0] + ".txt", encoding='utf8',)
 
             for line in event:
                 lines += line
 
-            if str(user_id) in lines:
+            if admin_id in lines:
+                return True
+
+            elif str(user_id) in lines:
                 return False
+
             else:
+
                 events = open(file_name[0] + ".txt", 'w')
-                events.write(str(user_id) + '\n')
+                events.write(lines + str(user_id) + '\n')
                 event.close()
                 return True
 
@@ -37,6 +61,7 @@ def student_info(number, gloss, user_id):
             if student_id(number, user_id):
                 rating = students[number]
                 rating[1] += float(gloss)
+                rating[3] += 1
                 return students[number]
                 i += 1
             else:
@@ -55,7 +80,7 @@ def ratingg(number):
         i += 1
         if number in students:
             rating_student = students[number]
-            sredniy_rating = rating_student[1] / 10
+            sredniy_rating = rating_student[1] / rating_student[3]
             return sredniy_rating
         else:
             return "Error"
