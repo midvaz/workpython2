@@ -1,8 +1,5 @@
-from vk_api import longpoll
 from vk_api.longpoll import VkEventType, VkLongPoll
 import students
-import vk_api
-import message
 import random
 
 
@@ -37,7 +34,7 @@ def glossing(vk_session, fuck):
                             number = event.text.lower()
                             vk.messages.send(  # Его выкидывают в начальные кнопки
                                 user_id=event.user_id,  # Для выбора другой операци
-                                message="Получи",  # "Пока не работает Была битва бомжей" ,
+                                message="Получи",
                                 keyboard=open("keyboard.json", "r", encoding="UTF-8").read(),
                                 random_id=random_id()
                             )

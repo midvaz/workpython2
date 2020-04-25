@@ -70,9 +70,6 @@ def student_info(number, gloss, user_id):
             return "Неправильное число"
 
 
-# Пока не работает
-# Была битва бомжей
-
 def ratingg(number):
     i = 0
 
